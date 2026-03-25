@@ -48,3 +48,7 @@ This phase utilizes a built-in NASA dataset: `xr.tutorial.open_dataset('air_temp
    Navigate to the project folder and launch the app:
    ```bash
    python -m panel serve Climate_Dashboard.py --show
+
+## Research
+* **Future Goal:** To integrate this panel logic with a lumen gallery example.
+* **Technical Aim:** Use Lumen's yaml-based architecture to automate the dashboard creation I built manually in Phase 2.
