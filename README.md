@@ -24,6 +24,21 @@ This phase utilizes a built-in NASA dataset: `xr.tutorial.open_dataset('air_temp
 * **Boundary Enforcement (The Layer Stack):** Used an overlay strategy (`Data * Coastline * Borders`) to ensure geographic boundaries remain visible. This allows the user to easily identify temperatures across different countries or states.
 * **Lazy Loading:** Optimized for memory efficiency by only loading the required temporal slices into the browser via **Dask**.
 
+## Demo Screenshots 
+1. Practice1 (Temperature)
+   <p align="center">
+  <img src="https://github.com/user-attachments/assets/55ce0f91-9f48-48c3-b004-fdf7377303f5" width="500">
+   </p>
+3. Practice1 (Precipitation)
+   <p align="left">
+  <img src="https://github.com/user-attachments/assets/ef941b33-8b12-476e-bb07-487ce7718a57" width="500">
+   </p>
+
+4. Climate Dashboard On NASA Dataset
+   <p align="center">
+  <img src="https://github.com/user-attachments/assets/14354c01-a139-43cf-aa8e-acbe03c20c12" width="500">
+   </p>
+
 ## How to Run
 1. **Install Dependencies:**
    Ensure you have required libraries installed:
@@ -32,4 +47,4 @@ This phase utilizes a built-in NASA dataset: `xr.tutorial.open_dataset('air_temp
 2. **Run the dashboard**
    Navigate to the project folder and launch the app:
    ```bash
-   panel serve Climate_Dashboard.py --show
+   python -m panel serve Climate_Dashboard.py --show
