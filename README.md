@@ -24,6 +24,14 @@ This phase utilizes a built-in NASA dataset: `xr.tutorial.open_dataset('air_temp
 * **Boundary Enforcement (The Layer Stack):** Used an overlay strategy (`Data * Coastline * Borders`) to ensure geographic boundaries remain visible. This allows the user to easily identify temperatures across different countries or states.
 * **Lazy Loading:** Optimized for memory efficiency by only loading the required temporal slices into the browser via **Dask**.
 
+## Phase 3: Lumen Integration
+After establishing the core logic in Phase 2, I successfully ported the pipeline into the Lumen framework. This transition moves the dashboard from a Python-heavy script to a YAML-driven specification, aligning with the official GSoC project goals.
+* The Challenge: Encountered a Source registration bug on Python 3.13 where the Xarray plugin was not auto-discovered.
+* The Fix: Implemented a manual entry-point injection in run_lumen.py to bridge the YAML configuration with the Xarray backend.
+* Files Added:
+  1. lumen_climate.yaml: The declarative dashboard specification.
+  2. run_lumen.py: The patched entry point for the Lumen server.
+
 ## Demo Screenshots 
 1. Practice1 (Temperature)
    <p align="center">
@@ -39,16 +47,16 @@ This phase utilizes a built-in NASA dataset: `xr.tutorial.open_dataset('air_temp
   <img src="https://github.com/user-attachments/assets/14354c01-a139-43cf-aa8e-acbe03c20c12" width="500">
    </p>
 
-## How to Run
+## How to Run (Uptill phase 2)
 1. **Install Dependencies:**
    Ensure you have required libraries installed:
    ```bash
    pip install xarray panel hvplot geoviews pooch netcdf4 dask
-2. **Run the dashboard**
+2. **Run the dashboard** (uptill phase 2 - ignore if lumen required files)
    Navigate to the project folder and launch the app:
    ```bash
    python -m panel serve Climate_Dashboard.py --show
 
-## Research
-* **Future Goal:** To integrate this panel logic with a lumen gallery example.
-* **Technical Aim:** Use Lumen's yaml-based architecture to automate the dashboard creation I built manually in Phase 2.
+3. **Run the lumen version**
+   ```bash
+   python run_lumen.py
