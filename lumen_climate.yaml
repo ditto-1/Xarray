@@ -1,0 +1,27 @@
+sources:
+  nasa_data:
+    type: xarray
+    uri: "C:\\Users\\DEEKSHA TANWAR\\OneDrive\\Desktop\\Uni\\gs\\air_temperature.nc"
+    ##chunks: {time:5}
+
+layouts:
+  - title: "Lumen Climate Test"
+    columns: 1
+    views:
+      - type: hvplot
+        source: nasa_source
+        field: air 
+        kind: quadmesh
+        x: lon
+        y: lat 
+        rasterize: true 
+        width: 800
+        height: 500
+        colorbar: true 
+        geo: true 
+        coastline: true 
+        cmap: coolwarm
+    filters:
+      - type: widget
+        field: time
+        label: "Select Data"
